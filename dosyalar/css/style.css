@@ -1,0 +1,43 @@
+.quick-links li a{
+  color: #fdfdfd !important;
+  text-decoration: none;
+}
+.d-flex div a {
+  color: var(--dark);
+  text-decoration: none;
+}
+.d-flex div a div.card:hover{
+  background-color: #e9e9e9;
+  color : black !important;
+}
+.tum-bolum {
+  border: 1px solid #dddddd;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+.ust-bolum{
+  border-bottom: 1px dashed #dfdfdf;
+  padding: 5px 10px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+.kategori-isim{
+  font-size:1.5rem;
+}
+.sayi{
+  position: absolute;
+  right: 15px;
+  bottom: 15px;
+  font-size:3rem;
+  color: #dddddd;
+}
+.sag-bolum{
+  border: 1px solid #dddddd;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+.alt-cizgi{
+  border-bottom: 1px dashed #dddddd;
+  margin-left:10px;
+  margin-right: 10px;
+}

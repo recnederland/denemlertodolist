@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Kitap Ekle</title>
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+   <script src="\js\bootstrap.js" charset="utf-8"></script>
+  </head>
+
+  <body class="bg-light d-flex align-items-center justify-content-center">
+    <div class="p-3 ">
+      <h3 class="p-2 text-center bg-info text-white ">
+        Kitap Ekle
+      </h3>
+      <form enctype="multipart/form-data" action="/veritabanina-ekle" method="post">
+        <div class="row mb-2">
+          <div class="col">
+            <input required class="form-control" type="text" name="kitapismi" placeholder="Kitap İsmi">
+          </div>
+          <div class="col">
+            <input required class="form-control" type="text" name="yazar" placeholder="Yazar">
+          </div>
+        </div>
+        <input required class="form-control mb-2" type="text" name="fiyat" placeholder="Fiyat">
+        <input required class="form-control mb-2" type="text" name="kategori" placeholder="Kategori">
+        <input required class="form-control mb-2" type="text" name="yayinevi" placeholder="Yayın Evi">
+        <textarea required class="form-control mb-2" name="aciklama" rows="3"></textarea>
+        <div class="col form-control mb-2 d-flex align-items-center">
+            <span>Resim Seçiniz : </span>
+            <input required class="pl-3" name="dosya" id="dosya" type="file">
+
+        </div>
+        <input class="w-100 btn btn-danger" type="submit" value="Ekle" >
+      </form>
+    </div>
+  </body>
+</html>

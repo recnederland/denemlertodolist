@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="/js/bootstrap.js" charset="utf-8"></script>
+  </head>
+  <body class="bg-light">
+      <%- include("header") -%>
+      <div class="container p-3">
+        <div class="row">
+          <div class="col-9">
+            <div class="bg-white tum-bolum">
+              <div class="ust-bolum d-flex justify-content-between align-items-center">
+                <h2 class="kategori-isim d-inline-block">Roman</h2>
+                <span><a class="text-muted" href="/kategori/roman">Tümünü Görüntüle</a></span>
+              </div>
+              <div class="d-flex flex-wrap pt-3 ">
+                <% for(var i = 0 ; i < romanlar.length ; i++ ){    %>
+                  <div class="col-2 pb-4 text-dark p-2">
+                    <a href="/kitap/<%= romanlar[i].kitapismi %>/<%= romanlar[i].id %>">
+                      <div class="card">
+                        <img height="200" src="<%= romanlar[i].resimlinki %>" class="card-img-top">
+                        <div class="card-body p-1">
+                          <p class="card-text text-center">
+                            <span style="text-decoration:underline; font-size:0.95rem"><%= romanlar[i].kitapismi %></span><br />
+                            <%= romanlar[i].fiyat  %> ₺
+                          </p>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                <% }  %>
+              </div>
+            </div>
+            <div class="bg-white tum-bolum mt-5">
+              <div class="ust-bolum d-flex justify-content-between align-items-center">
+                <h2 class="kategori-isim d-inline-block">Bilim</h2>
+                <span><a class="text-muted" href="/kategori/bilim">Tümünü Görüntüle</a></span>
+              </div>
+              <div class="d-flex flex-wrap pt-3 ">
+                <% for(var i = 0 ; i < bilimler.length ; i++ ){    %>
+                  <div class="col-2 pb-4 text-dark p-2">
+                    <a href="/kitap/<%= bilimler[i].kitapismi %>/<%= bilimler[i].id %>">
+                      <div class="card">
+                        <img height="200" src="<%= bilimler[i].resimlinki %>" class="card-img-top">
+                        <div class="card-body p-1">
+                          <p class="card-text text-center">
+                            <span style="text-decoration:underline; font-size:0.95rem"><%= bilimler[i].kitapismi %></span><br />
+                            <%= bilimler[i].fiyat  %> ₺
+                          </p>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                <% }  %>
+              </div>
+            </div>
+          </div>
+          <div class="col-3 bg-white sag-bolum">
+            <h3 class="kategori-isim pt-2">Çok Satanlar</h3>
+            <hr>
+            <% for(var i = 0; i < coksatanlar.length ; i++){ %>
+              <div class="row alt-cizgi mb-2 pb-2">
+                <div class="col-4 p-0">
+                  <img width="100%" src="<%=  coksatanlar[i].resimlinki  %>" alt="">
+                </div>
+                <div class="col-8">
+                  <a class="text-dark" href="/kitap/<%=coksatanlar[i].kitapismi%>/<%=coksatanlar[i].id%>"<span><%=coksatanlar[i].kitapismi  %></span></a><br />
+                  <span class="text-muted"><%=  coksatanlar[i].yazar  %></span>
+                  <span class="sayi"><%= (i + 1) %></span>
+                </div>
+              </div>
+            <% } %>
+          </div>
+        </div>
+      </div>
+      <%- include("footer") -%>
+    </body>
+</html>

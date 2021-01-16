@@ -1,0 +1,40 @@
+<div class="bg-info">
+
+
+<div class="container pl-0 pr-0">
+<nav class="navbar navbar-expand-lg navbar-dark">
+  <a class="navbar-brand" href="/"><b style="text-decoration: underline;">KitapSitesi</b></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="/">Anasayfa <span class="sr-only">(current)</span></a>
+      </li>
+
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Kategoriler
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+
+          <% for(var i = 0 ; i < kategoriler.length ; i++) { %>
+            <a class="dropdown-item" href="/kategori/<%= kategoriler[i].kategori_link  %>"><%= kategoriler[i].kategori_ismi  %></a>
+          <% } %>
+
+        </div>
+      </li>
+
+    </ul>
+    <form action="/arama" class="form-inline my-2 my-lg-0">
+      <input name="kitap" class="form-control mr-sm-2" type="search" placeholder="Kitap ismi giriniz" aria-label="Search">
+      <button class="btn btn-dark my-2 my-sm-0" type="submit">Arama</button>
+    </form>
+  </div>
+</nav>
+
+</div>
+
+</div>

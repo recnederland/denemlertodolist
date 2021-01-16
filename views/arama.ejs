@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="/js/bootstrap.js" charset="utf-8"></script>
+
+  </head>
+  <body class="bg-light">
+
+    <%- include("header") -%>
+
+    <div class="container p-3">
+      <h2 class="p-3">Bulunan sonuçlar</h2>
+
+    <div class="d-flex flex-wrap">
+      <% for(var i = 0 ; i < kitaplar.length ; i++ ){    %>
+        <div class="col-2 pb-4 text-dark">
+          <a href="/kitap/<%= kitaplar[i].kitapismi %>/<%= kitaplar[i].id %>">
+            <div class="card">
+              <img height="250" src="<%= kitaplar[i].resimlinki %>" class="card-img-top">
+              <div class="card-body p-2">
+                <p class="card-text text-center ">
+                  <span style="text-decoration:underline"><%= kitaplar[i].kitapismi %></span><br />
+                  <%= kitaplar[i].fiyat  %> ₺
+                </p>
+              </div>
+            </div>
+          </a>
+        </div>
+      <% }  %>
+
+  </div>
+    </div>
+
+    <%- include("footer") -%>
+
+
+  </body>
+</html>
